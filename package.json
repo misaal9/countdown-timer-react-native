@@ -1,11 +1,11 @@
 {
-  "name": "countdown-timer-react-native",
+  "name": "timer",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-native-scripts": "1.6.0",
-    "jest-expo": "^22.0.0",
-    "react-test-renderer": "16.0.0-beta.5"
+    "react-native-scripts": "1.5.0",
+    "jest-expo": "^21.0.2",
+    "react-test-renderer": "16.0.0-alpha.12"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -19,8 +19,12 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^22.0.0",
-    "react": "16.0.0-beta.5",
-    "react-native": "^0.49.5"
+    "@expo/vector-icons": "^6.1.0",
+    "expo": "^21.0.0",
+    "firebase": "^4.6.0",
+    "native-base": "^2.2.1",
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.48.4",
+    "react-navigation": "^1.0.0-beta.15"
   }
 }
