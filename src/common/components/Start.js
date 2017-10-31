@@ -1,4 +1,5 @@
 import React from 'React'
+import { View } from 'react-native'
 import { Container, Header, Left, Body, Title, Button, Content, List, ListItem, Text, Right, Icon } from 'native-base'
 
 export default class Start extends React.Component {
@@ -15,11 +16,11 @@ export default class Start extends React.Component {
             <Icon style={styles.rightIcons} name="md-list" />
           </Right>
         </Header>
-        <Content padder>
-          <Text>3</Text>
-          <Text>:</Text>
-          <Text>40</Text>
-          <Button block danger>
+        <Content padder contentContainerStyle={styles.content}>
+          <View style={styles.view}>
+            <Text style={styles.tim}>4:30</Text>  
+          </View>
+          <Button block success style={styles.button}>
             <Text>Start</Text>
           </Button>
         </Content>
@@ -30,6 +31,18 @@ export default class Start extends React.Component {
 
 const styles = {
   rightIcons: {
-    marginLeft: 20
+    marginLeft: 20,
+  },
+  tim: {
+    fontSize: 100
+  },
+  view: {
+    flex: 1,
+    justifyContent: 'center'
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center'
   }
 }

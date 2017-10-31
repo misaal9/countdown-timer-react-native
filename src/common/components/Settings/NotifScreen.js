@@ -15,7 +15,7 @@ export default class TitleScreen extends React.Component {
             <Icon style={styles.rightIcons} name="md-list" />
           </Right>
         </Header>
-        <Content padder>
+        <Content padder contentContainerStyle={{ flex: 1, justifyContent: 'center' }}>
           <List>
             <ListItem>
               <Left>
@@ -41,11 +41,7 @@ export default class TitleScreen extends React.Component {
                 <Switch value={false} />
               </Right>
             </ListItem>
-            <ListItem />
           </List>
-          <Button block danger>
-              <Text>Delete This Timer</Text>
-            </Button>
         </Content>
       </Container>
     )

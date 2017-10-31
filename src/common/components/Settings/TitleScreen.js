@@ -1,5 +1,5 @@
 import React from 'React'
-import { Container, Header, Left, Body, Title, Content, List, ListItem, Text, Right, Icon } from 'native-base'
+import { Container, Header, Left, Body, Title, Content, List, ListItem, Text, Right, Icon, Item, Input } from 'native-base'
 
 export default class TitleScreen extends React.Component {
   render () {
@@ -15,8 +15,10 @@ export default class TitleScreen extends React.Component {
             <Icon style={styles.rightIcons} name="md-list" />
           </Right>
         </Header>
-        <Content>
-          
+        <Content padder contentContainerStyle={{ flex: 1, justifyContent:'center' }}>
+          <Item underline>
+            <Input style={{textAlign: 'center'}} placeholder="What is this timer for?" />
+          </Item>
         </Content>
       </Container>
     )

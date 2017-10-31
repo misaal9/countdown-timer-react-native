@@ -1,5 +1,4 @@
 import React from 'react';
-// import { StyleSheet, Text, View } from 'react-native';
 import List from './src/common/components/List'
 import Start from './src/common/components/Start'
 import TimeScreen from './src/common/components/Settings/TimeScreen'
