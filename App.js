@@ -1,5 +1,7 @@
 import React from 'react';
 import logger from 'redux-logger'
+import * as firebase from 'firebase'
+import ReduxThunk from 'redux-thunk'
 import RootReducer from './src/common/reducers/RootReducer'
 import { applyMiddleware, createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -10,18 +12,20 @@ import TimeScreen from './src/common/components/Settings/TimeScreen'
 import TitleScreen from './src/common/components/Settings/TitleScreen'
 import NotifScreen from './src/common/components/Settings/NotifScreen'
 
-import LoadAppContainer from './src/common/containers/LoadAppContainer'
+import AppContainer from './src/common/containers/AppContainer'
+
+console.disableYellowBox = true
 
 const store = createStore(
   RootReducer,
-  applyMiddleware(logger)
+  applyMiddleware(ReduxThunk, logger)
 )
 
 export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <LoadAppContainer />
+        <AppContainer />
       </Provider>
     );
   }

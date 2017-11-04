@@ -1,12 +1,12 @@
-import { LOAD } from './../constants/types'
+import { LOAD, SET_DATA_INIT } from './../constants/types'
 
 const INITIAL_STATE = {
-  isLoaded: false,
-  isDefaultSet: false
+  isLoaded: false
 }
 
 const AppReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case SET_DATA_INIT:
     case LOAD:
       return {
         ...state,

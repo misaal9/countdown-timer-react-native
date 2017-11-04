@@ -1,10 +1,20 @@
-import { LOAD } from '../constants/types'
+import { LOAD, SET_DATA_INIT } from '../constants/types'
+import Database from '../services/Database'
 
-export const loadAction = () => {
-  return({
-    type: LOAD,
+const setInitDataFromFirebase = data => {
+  return ({
+    type: SET_DATA_INIT,
     payload: {
+      data,
       isLoaded: true
     }
+  })
+}
+
+export const loadAction = () => {
+  return ((dispatch)=>{
+    Database.once('value', snapshot=>{
+      dispatch(setInitDataFromFirebase(snapshot.val()))
+    })
   })
 }
