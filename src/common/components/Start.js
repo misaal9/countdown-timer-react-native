@@ -6,21 +6,16 @@ export default class Start extends React.Component {
   render () {
     return (
       <Container>
-        <Header>
-          <Left />
-          <Body>
-            <Title>Start</Title>
-          </Body>
-          <Right>
-            <Icon style={styles.rightIcons} name="md-settings" />
-            <Icon style={styles.rightIcons} name="md-list" />
-          </Right>
-        </Header>
         <Content padder contentContainerStyle={styles.content}>
           <View style={styles.view}>
             <Text style={styles.tim}>4:30</Text>  
           </View>
-          <Button block success style={styles.button}>
+          <Button 
+            block
+            success
+            style={styles.button}
+            onPress={()=>this.props.navigation.navigate('Time')}
+            >
             <Text>Start</Text>
           </Button>
         </Content>

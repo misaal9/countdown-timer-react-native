@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Content, Spinner } from 'native-base'
 
-const loadingSpinnerColor = '#000000'
+const loadingSpinnerColor = 'red'
 
 const Loading = () => {
   return (

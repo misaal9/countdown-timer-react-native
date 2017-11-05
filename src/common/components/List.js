@@ -4,18 +4,14 @@ import { Container, Header, Left, Body, Title, Content, List, ListItem, Text, Ri
 const DefaultMark = () => <Icon name="md-checkmark" style={{color: 'green'}}/>
 
 export default class Lists extends React.Component {
-  componentWillMount () {
-    console.log(this.props.items)
-  }
-
   renderListItems () {
-    const { items } = this.props
-    if (!items.length) {
+    const { timers } = this.props.screenProps.data
+    if (!timers.length) {
       return <Text>No items to show</Text>
     }
 
     return (
-      items.map( (item, idx) => {
+      timers.map( (item, idx) => {
         return (
           <ListItem key={idx}>
             <Left>
@@ -34,15 +30,6 @@ export default class Lists extends React.Component {
   render () {
     return (
       <Container>
-        <Header>
-          <Left />
-          <Body>
-            <Title>List</Title>
-          </Body>
-          <Right>
-            <Icon name="md-add" />
-          </Right>
-        </Header>
         <Content>
           <List>
             { this.renderListItems() }
