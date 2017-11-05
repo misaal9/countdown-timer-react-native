@@ -10,6 +10,17 @@ export default class TimeScreen extends React.Component {
     minute: "30"
   }
 
+  componentWillMount() {
+    if (this.props.navigation.state.params) {
+      const { time } = this.props.navigation.state.params
+      this.setState({
+        hour: `${time.hour}`,
+        minute: `${time.minute}`
+      })      
+    }
+    
+  }
+
   renderEasyGridPicker() {
     return(
       <Grid style={{

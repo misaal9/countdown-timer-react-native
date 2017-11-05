@@ -3,12 +3,29 @@ import { View } from 'react-native'
 import { Container, Header, Left, Body, Title, Button, Content, List, ListItem, Text, Right, Icon } from 'native-base'
 
 export default class Start extends React.Component {
+  state = {
+    hour: '4',
+    minute: '30'
+  }
+
+  componentWillMount() {
+    if (this.props.navigation.state.params) {
+      const { time } = this.props.navigation.state.params
+      this.setState({
+        hour: `${time.hour}`,
+        minute: `${time.minute}`
+      })
+    }
+  }
+
   render () {
     return (
       <Container>
         <Content padder contentContainerStyle={styles.content}>
           <View style={styles.view}>
-            <Text style={styles.tim}>4:30</Text>  
+            <Text style={styles.tim}>
+              { `${this.state.hour}:${this.state.minute}` }
+            </Text>  
           </View>
           <Button 
             block

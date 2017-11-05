@@ -2,6 +2,23 @@ import React from 'React'
 import { Container, Header, Left, Body, Title, Content, Button, List, ListItem, Text, Right, Icon, Switch } from 'native-base'
 
 export default class TitleScreen extends React.Component {
+  state = {
+    alarm: false,
+    push: false,
+    ring: false
+  }
+
+  componentWillMount () {
+    if (this.props.navigation.state.params) {
+      const { alarm, push, ring } = this.props.navigation.state.params.notification
+      this.setState({
+        alarm,
+        push,
+        ring
+      })
+    }
+  }
+
   render () {
     return (
       <Container>
@@ -12,7 +29,7 @@ export default class TitleScreen extends React.Component {
                 <Text>Alarm</Text>
               </Left>
               <Right>
-                <Switch value={false} />
+                <Switch value={this.state.alarm} />
               </Right>
             </ListItem>
             <ListItem>
@@ -20,7 +37,7 @@ export default class TitleScreen extends React.Component {
                 <Text>Notification</Text>
               </Left>
               <Right>
-                <Switch value={false} />
+                <Switch value={this.state.push} />
               </Right>
             </ListItem>
             <ListItem>
@@ -28,7 +45,7 @@ export default class TitleScreen extends React.Component {
                 <Text>Ring Phone</Text>
               </Left>
               <Right>
-                <Switch value={false} />
+                <Switch value={this.state.ring} />
               </Right>
             </ListItem>
           </List>

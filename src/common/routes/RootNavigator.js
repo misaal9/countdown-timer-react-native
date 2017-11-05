@@ -18,7 +18,7 @@ export default StackNavigator(
           headerRight: (
             <Button 
               transparent
-              onPress={()=>{navigation.navigate('Start')}}
+              onPress={()=>{navigation.navigate('Settings')}}
               >
               <Icon name='ios-add' />
             </Button>
@@ -35,7 +35,10 @@ export default StackNavigator(
             <View style={styles.headerView}>
               <Button 
                 transparent
-                onPress={()=>{navigation.navigate('Settings')}}
+                onPress={()=>{
+                  const {params} = navigation.state
+                  return navigation.navigate('Settings', params)
+                }}
                 >
                 <Icon name='ios-build' />
               </Button>
@@ -59,7 +62,7 @@ export default StackNavigator(
             <View style={styles.headerView}>
               <Button 
                 transparent
-                onPress={()=>{navigation.navigate('Start')}}
+                onPress={()=>{navigation.navigate('Start', )}}
                 >
                 <Icon name='ios-alarm-outline' />
               </Button>

@@ -13,7 +13,10 @@ export default class Lists extends React.Component {
     return (
       timers.map( (item, idx) => {
         return (
-          <ListItem key={idx}>
+          <ListItem 
+            key={idx}
+            onPress={()=>this.props.navigation.navigate('Start', item)}
+            >
             <Left>
               <Icon name='md-alarm' />
               <Text>{ item.title }</Text>
